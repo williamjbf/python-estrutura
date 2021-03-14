@@ -4,7 +4,7 @@ class Vetor():
         self.__elementos = [None]*tamanho
         self.__posicao = 0
 
-    def tamanho_vetor(self):
+    def tamanhoVetor(self):
         return len(self.__elementos)
 
     def __str__(self):
@@ -17,34 +17,34 @@ class Vetor():
         return False
 
     def indice(self, elemento):
-        for i in range(self.tamanho_vetor()):
-            elem = self.listar_elemento(i)
+        for i in range(self.tamanhoVetor()):
+            elem = self.listarElemento(i)
             if elem == elemento:
                 return i
         return -1
 
-    def inseir_elemento_posicao(self, elemento, posicao):
+    def inseirElementoPosicao(self, elemento, posicao):
         vetor_inicio = self.__elementos[:posicao]+[None]
         veotor_final = self.__elementos[posicao:]
         vetor_inicio[len(vetor_inicio)-1] = elemento
         self.__elementos = vetor_inicio + veotor_final
         self.__posicao += 1
 
-    def inserir_elemento_final(self, elemento):
-        if(self.__posicao >= self.tamanho_vetor()):
+    def inserirElementoFinal(self, elemento):
+        if(self.__posicao >= self.tamanhoVetor()):
             self.__elementos += [None]
         self.__elementos[self.__posicao] = elemento
         self.__posicao += 1
 
-    def remover_elemento_indice(self, posicao):
+    def removerElementoIndice(self, posicao):
         vetor_inicio = self.__elementos[:posicao]
         veotor_final = self.__elementos[posicao+1:]
         self.__elementos = vetor_inicio + veotor_final
         self.__posicao = -1
 
-    def remover_elemento(self,elemento):
+    def removerElemento(self,elemento):
         posicao = self.indice(elemento)
-        self.remover_elemento_indice(posicao)
+        self.removerElementoIndice(posicao)
         
-    def listar_elemento(self, posicao):
+    def listarElemento(self, posicao):
         return self.__elementos[posicao]
