@@ -1,9 +1,10 @@
 from vetores import vetor
-from listas import listaLigada
+from listas import listaLigada, listaDuplamenteLigada
 
 print(30*"-", "MENU", 30*"-")
 print("1- Vetores")
 print("2- Listas Ligadas")
+print("3- Listas Duplamente Ligadas")
 menu = int(input("Digite a opção desejada: "))
 
 if menu == 1:
@@ -28,15 +29,35 @@ if menu == 1:
     vetorTeste.removerElemento(3)
     print(vetorTeste)
 
-elif menu ==2:
+elif menu == 2:
     listaTeste = listaLigada.ListaLigada()
     listaTeste.inserir(1)
     listaTeste.inserir(2)
     listaTeste.inserir(3)
     print(listaTeste)
-    listaTeste.inserirPosicao(4,0)
-    listaTeste.inserirPosicao(5,15)
-    listaTeste.inserirPosicao(6,3)
+    listaTeste.inserirPosicao(4, 0)
+    listaTeste.inserirPosicao(5, 15)
+    listaTeste.inserirPosicao(6, 3)
+    print(listaTeste)
+    listaTeste.removerPosicao(0)
+    listaTeste.removerPosicao(5)
+    listaTeste.removerPosicao(2)
+    listaTeste.removerElemento(3)
+    print(listaTeste)
+    print(listaTeste.recuperarElementoNo(2))
+    print(listaTeste.contem(4))
+    print(listaTeste.indice(3))
+
+elif menu == 3:
+    listaTeste = listaDuplamenteLigada.ListaDuplamenteLigada()
+    listaTeste = listaLigada.ListaLigada()
+    listaTeste.inserir(1)
+    listaTeste.inserir(2)
+    listaTeste.inserir(3)
+    print(listaTeste)
+    listaTeste.inserirPosicao(4, 0)
+    listaTeste.inserirPosicao(5, 15)
+    listaTeste.inserirPosicao(6, 3)
     print(listaTeste)
     listaTeste.removerPosicao(0)
     listaTeste.removerPosicao(5)
