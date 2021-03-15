@@ -1,5 +1,5 @@
 class No():
-    def __init__(self, elemento, proximo=None, anterior=None):
+    def __init__(self, elemento, proximo = None, anterior = None):
         self.__elemento = elemento
         self.__proximo = proximo
         self.__anterior = anterior
@@ -22,7 +22,7 @@ class No():
 
     @property
     def anterior(self):
-        return self.__proximo
+        return self.__anterior
 
     @anterior.setter
     def anterior(self, anterior):

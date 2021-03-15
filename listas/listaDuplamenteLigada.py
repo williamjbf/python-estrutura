@@ -1,11 +1,14 @@
 from listas.noDuplamenteLigado import No
 
-
 class ListaDuplamenteLigada():
     def __init__(self):
         self.__primeiroNo = None
         self.__ultimoNo = None
         self.__tamanho = 0
+
+    @property
+    def tamanho(self):
+        return self.__tamanho
 
     def inserir(self, elemento):
         novoNo = No(elemento)

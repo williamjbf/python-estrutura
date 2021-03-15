@@ -1,5 +1,5 @@
 class No():
-    def __init__(self, elemento, proximo=None):
+    def __init__(self, elemento, proximo = None):
         self.__elemento = elemento
         self.__proximo = proximo
 

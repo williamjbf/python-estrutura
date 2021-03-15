@@ -1,10 +1,12 @@
 from vetores import vetor
 from listas import listaLigada, listaDuplamenteLigada
+from pilhas import pilha
 
 print(30*"-", "MENU", 30*"-")
 print("1- Vetores")
 print("2- Listas Ligadas")
 print("3- Listas Duplamente Ligadas")
+print("4- Pilhas")
 menu = int(input("Digite a opção desejada: "))
 
 if menu == 1:
@@ -67,3 +69,9 @@ elif menu == 3:
     print(listaTeste.recuperarElementoNo(2))
     print(listaTeste.contem(4))
     print(listaTeste.indice(3))
+elif menu == 4:
+    pilhaTeste = pilha.Pilha()
+    pilhaTeste.empilhar(1)
+    pilhaTeste.empilhar(2)
+    pilhaTeste.empilhar(3)
+    print(pilhaTeste.desempilhar())
