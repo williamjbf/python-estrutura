@@ -2,7 +2,8 @@ from vetores import vetor
 from listas import listaLigada, listaDuplamenteLigada
 from pilhas import pilha
 from filas import fila
-from conjuntos import conjunto
+from conjuntos import conjunto,conjuntoEspalhamento
+from espalhamento import tabelaEspalhamento
 
 print(30*"-", "MENU", 30*"-")
 print("1- Vetores")
@@ -11,6 +12,7 @@ print("3- Listas Duplamente Ligadas")
 print("4- Pilhas")
 print("5- Filas")
 print("6- Sets")
+print("7- espalhamento")
 menu = int(input("Digite a opção desejada: "))
 
 if menu == 1:
@@ -100,5 +102,19 @@ elif menu == 6:
     print(conjuntoTeste.inserirPosicao(1,2))
     print(conjuntoTeste.inserirPosicao(3,4))
     print(conjuntoTeste)
+
+elif menu == 7:
+    conjuntoTeste = conjuntoEspalhamento.Conjunto()
+    conjuntoTeste.inserir(1)
+    conjuntoTeste.inserir(2)
+    conjuntoTeste.inserir(3)
+    print(conjuntoTeste)
+    print(conjuntoTeste.removerElemento(3))
+    print(conjuntoTeste)
+    conjuntoTeste.inserir('Python')
+    conjuntoTeste.inserir('William')
+    conjuntoTeste.inserir(11)
+    print(conjuntoTeste)
+
 else:
     print("Opção invalida")
