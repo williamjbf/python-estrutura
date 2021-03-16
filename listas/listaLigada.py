@@ -7,6 +7,10 @@ class ListaLigada():
         self.__ultimoNo = None
         self.__tamanho = 0
 
+    @property
+    def tamanho(self):
+        return self.__tamanho
+
     def inserir(self, elemento):
         novoNo = No(elemento)
         if self.estaVazia():
@@ -17,7 +21,7 @@ class ListaLigada():
             self.__ultimoNo = novoNo
         self.__tamanho += 1
 
-    def inserirPosicao(self, elemento, posicao):
+    def inserirPosicao(self, posicao, elemento):
         if posicao == 0:
             novoNo = No(elemento)
             novoNo.proximo = self.__primeiroNo
@@ -39,8 +43,8 @@ class ListaLigada():
             noAtual = self.recuperarNo(i)
             if noAtual.elemento == elemento:
                 return True
-            else:
-                return False
+        
+        return False
 
     def indice(self, elemento):
         for i in range(self.__tamanho):
