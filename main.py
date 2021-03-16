@@ -4,6 +4,7 @@ from pilhas import pilha
 from filas import fila
 from conjuntos import conjunto,conjuntoEspalhamento
 from espalhamento import tabelaEspalhamento
+from mapas import mapa
 
 print(30*"-", "MENU", 30*"-")
 print("1- Vetores")
@@ -13,6 +14,7 @@ print("4- Pilhas")
 print("5- Filas")
 print("6- Sets")
 print("7- espalhamento")
+print("8- Mapas")
 menu = int(input("Digite a opção desejada: "))
 
 if menu == 1:
@@ -115,6 +117,18 @@ elif menu == 7:
     conjuntoTeste.inserir('William')
     conjuntoTeste.inserir(11)
     print(conjuntoTeste)
+
+elif menu == 8:
+    mapaTeste = mapa.Mapa()
+    mapaTeste.adicionar("par",10)
+    mapaTeste.adicionar("impar", 15)
+    mapaTeste.adicionar("par",4)
+    mapaTeste.adicionar("impar",3)
+    print(mapaTeste)
+    print(mapaTeste.contemChave("par"))
+    print(mapaTeste.recuperar("par"))
+    print(mapaTeste.remover("par"))
+    print(mapaTeste)
 
 else:
     print("Opção invalida")
