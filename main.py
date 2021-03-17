@@ -2,9 +2,10 @@ from vetores import vetor
 from listas import listaLigada, listaDuplamenteLigada
 from pilhas import pilha
 from filas import fila
-from conjuntos import conjunto,conjuntoEspalhamento
+from conjuntos import conjunto, conjuntoEspalhamento
 from espalhamento import tabelaEspalhamento
 from mapas import mapa
+from arvores import arvore, noArvoreInteiro
 
 print(30*"-", "MENU", 30*"-")
 print("1- Vetores")
@@ -15,6 +16,7 @@ print("5- Filas")
 print("6- Sets")
 print("7- espalhamento")
 print("8- Mapas")
+print("9- Arvores")
 menu = int(input("Digite a opção desejada: "))
 
 if menu == 1:
@@ -37,6 +39,7 @@ if menu == 1:
     print(vetorTeste)
     vetorTeste.removerElementoIndice(2)
     vetorTeste.removerElemento(3)
+    print()
     print(vetorTeste)
 
 elif menu == 2:
@@ -100,9 +103,9 @@ elif menu == 6:
     conjuntoTeste.inserir(2)
     conjuntoTeste.inserir(3)
     print(conjuntoTeste)
-    print(conjuntoTeste.inserirPosicao(1,1))
-    print(conjuntoTeste.inserirPosicao(1,2))
-    print(conjuntoTeste.inserirPosicao(3,4))
+    print(conjuntoTeste.inserirPosicao(1, 1))
+    print(conjuntoTeste.inserirPosicao(1, 2))
+    print(conjuntoTeste.inserirPosicao(3, 4))
     print(conjuntoTeste)
 
 elif menu == 7:
@@ -120,15 +123,35 @@ elif menu == 7:
 
 elif menu == 8:
     mapaTeste = mapa.Mapa()
-    mapaTeste.adicionar("par",10)
+    mapaTeste.adicionar("par", 10)
     mapaTeste.adicionar("impar", 15)
-    mapaTeste.adicionar("par",4)
-    mapaTeste.adicionar("impar",3)
+    mapaTeste.adicionar("par", 4)
+    mapaTeste.adicionar("impar", 3)
     print(mapaTeste)
     print(mapaTeste.contemChave("par"))
     print(mapaTeste.recuperar("par"))
     print(mapaTeste.remover("par"))
     print(mapaTeste)
+
+elif menu == 9:
+    arvoreTeste = arvore.Arvore()
+    print(arvoreTeste)
+    arvoreTeste.inserirElemento(noArvoreInteiro.NoArvoreInteiro(7))
+    arvoreTeste.inserirElemento(noArvoreInteiro.NoArvoreInteiro(6))
+    arvoreTeste.inserirElemento(noArvoreInteiro.NoArvoreInteiro(4))
+    arvoreTeste.inserirElemento(noArvoreInteiro.NoArvoreInteiro(5))
+    arvoreTeste.inserirElemento(noArvoreInteiro.NoArvoreInteiro(10))
+    arvoreTeste.inserirElemento(noArvoreInteiro.NoArvoreInteiro(9))
+    arvoreTeste.inserirElemento(noArvoreInteiro.NoArvoreInteiro(12))
+    print(arvoreTeste.buscar(noArvoreInteiro.NoArvoreInteiro(6)))
+    print(arvoreTeste.buscar(noArvoreInteiro.NoArvoreInteiro(4)))
+    arvoreTeste.em_ordem()
+    print(30*'-')
+    arvoreTeste.pre_ordem()
+    print(30*'-')
+    arvoreTeste.pre_ordem()
+    print(30*'-')
+    print(arvoreTeste.altura())
 
 else:
     print("Opção invalida")
